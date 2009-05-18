@@ -7,11 +7,11 @@ h1. How (apparently!) not to do action based caching with Zend Framework
 
 p(meta). May 18th 2009
 
-I've playing with "Zend Framework":http://framework.zend.com. (ZF) for a personal project at the time, and theres a lot to like about ZF but you also have to realize it can be quite a monster to wrap your head around. Especially if you're dealing with the MVC package of the framework.
+I've playing with "Zend Framework":http://framework.zend.com. (ZF) for a personal project at the time, and there is a lot to like about ZF but you also have to realize it can be quite a monster to wrap your head around. Especially if you're dealing with the MVC package of the framework.
 
 The goal was to have access to easy action based caching, by utilizing any of the @Zend_Cache@ frontends. I'd read a bit about the plugin infrastructure of ZF components and it seemed pretty standard.
 
-I figured an "action helper":http://framework.zend.com/manual/en/zend.controller.actionhelpers.html helper extending "@Zend_Controller_Action_Helper_Abstract@":http://framework.zend.com/apidoc/core/Zend_Controller/Zend_Controller_Action_Helper/Zend_Controller_Action_Helper_Abstract.html as that would give me _pre_ and _post_ dispatch hooks. The idea was just to hook into @postDispatch@, and see if it's a registered method i want to be cached, and then store it away for the @preDispatch@ hook to look after on the nest request.
+I figured an "action helper":http://framework.zend.com/manual/en/zend.controller.actionhelpers.html helper extending "@Zend_Controller_Action_Helper_Abstract@":http://framework.zend.com/apidoc/core/Zend_Controller/Zend_Controller_Action_Helper/Zend_Controller_Action_Helper_Abstract.html would accomplish what i needed as it would give me _pre_ and _post_ dispatch hooks. The idea was just to hook into @postDispatch@, and see if it's a registered method i want cached, and then store it away for the @preDispatch@ hook to look after on the nest request.
 
 Before actually implementing anything i whipped up a very simple helper for figuring out whether it did what i wanted or not.
 
