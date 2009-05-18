@@ -1,0 +1,20 @@
+---
+layout: default
+title: human &lt; geek &gt; ordinary
+---
+
+<div id="home">
+  <h1>Blog Posts</h1>
+  <ul class="posts">
+    {% for post in site.posts %}
+      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+  
+  <h1>Open Source Projects</h1>
+  <ul class="posts">
+    <li><a href="http://github.com/davidreuss/gitex/">gitex:</a> provides bidirectional support with cvs by utilizing gits export features.</li>
+    <li><a href="http://github.com/davidreuss/webphp/">webphp:</a> the no framework framework for building php webapps.</li>
+  </ul>
+</div>
+  
