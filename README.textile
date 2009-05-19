@@ -1,1 +1,6 @@
 h1. jekyll/github pages blog
+
+It's currently fork of http://github.com/mojombo with very minor modifications.
+    
+If i ever get the time/skills to do something as simple and neat looking
+at this. I probably will go in and change some bits around.
